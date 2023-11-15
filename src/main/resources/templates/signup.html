@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/signup_style.css}">
+
+    <title>Sign Up</title>
+    <style th:inline="text">
+        body{
+            background-image: url("[[@{/assets/background.png}]]")         ;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="leftContainer">
+        <h1>Welcome to <br /> <strong>SuperDuperDrive</strong> </h1>
+        <p>Welcome to our secure digital vault! At our platform, we prioritize your privacy and security above all else. With our cutting-edge encryption technology, your files, notes, and passwords are safeguarded against unauthorized access, ensuring your sensitive information remains confidential.</p>
+        <p>Already have an account? <a th:href="@{/login}">Click Here</a> to login</p>
+    </div>
+    <div class="rightContainer">
+        <img th:src="@{assets/profile_icon.png}" />
+        <form th:action="@{/register}" method="POST">
+            <div th:if="${param.success}" class="success_container">
+                You successfully signed up! Please continue to the <a th:href="@{/login}">login</a> page.
+            </div>
+            <div th:if="${param.error}" class="error_credentials">
+                <span>Signup Error</span>
+            </div>
+            <div>
+                <div>
+                    <input type="input" name="firstname" class="form-control" id="inputFirstName" placeholder="Enter First Name" maxlength="20" required>
+                </div>
+                <div>
+                    <input type="input" name="lastname" class="form-control" id="inputLastName" placeholder="Enter Last Name" maxlength="20" required>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="input" name="username" class="form-control" id="inputUsername" placeholder="Enter Username" maxlength="20" required>
+                </div>
+                <div>
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter Password" maxlength="20" required>
+                </div>
+            </div>
+            <button id = "signup" type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+    
+</div>
+</body>
+</html>

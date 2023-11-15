@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.leftContainer{
+    font-family: 'Inter', sans-serif;
+    width: 50%;
+    padding: 0 150px;
+    color: white;
+}
+
+.leftContainer h1{
+    font-size: 70px;
+    font-weight: 500;
+}
+
+.leftContainer h1 strong{
+    font-weight: 700;
+}
+
+.rightContainer{
+    background-color: #1717175f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+}
+
+.rightContainer form{
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+}
+
+.rightContainer form input{
+    outline: none;
+    border: none;
+    border-radius: 22px;
+    height: 56px;
+    width: 100%;
+    padding: 0 25px;
+    background-color: transparent !important;
+    margin: 20px 0;
+    border: 2px solid white;
+    color: white;
+}
+
+.rightContainer form input:focus{
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+}
+
+.rightContainer form button{
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    height: 56px;
+    width: 100%;
+    padding: 0 25px;
+    background-color: #6767671d;
+    margin: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    color: white
+}
+
+.leftContainer a{
+    color: #82C078;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.success_container{
+    background-color: #82c0787a;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.error_credentials{
+    background-color: #ff00007a;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}

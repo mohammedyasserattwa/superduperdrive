@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/login_styles.css}">
+
+    <title>Login</title>
+    <style th:inline="text">
+        body{
+            background-image: url("[[@{/assets/background.png}]]")         ;
+        }
+    </style>
+    <script src="http://localhost:35729/livereload.js"></script>
+
+
+</head>
+<body >
+<div class = "container">
+    <div class="leftContainer">
+        <h1>Welcome Back, to<br /> <strong>SuperDuperDrive</strong> </h1>
+        <p>Welcome to our secure digital vault! At our platform, we prioritize your privacy and security above all else. With our cutting-edge encryption technology, your files, notes, and passwords are safeguarded against unauthorized access, ensuring your sensitive information remains confidential.</p>
+        <p>New User? <a th:href="@{/signup}">Click Here</a> to create a new account</p>
+    </div>
+<div class="rightContainer">
+    <img th:src="@{/assets/profile_icon.png}" />
+    <form th:action="@{/login}" method="post">
+        <div th:if="${param.error}" class="error_credentials">
+            Invalid username or password
+        </div>
+        <div th:if="${param.logout}" class = "logged_out">
+            You have been logged out
+        </div>
+        
+        <div class="form-group">
+            <input type="input" name="username" id="inputUsername" placeholder="Enter Username" maxlength="20" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" id="inputPassword" placeholder="Enter Password" maxlength="20" required>
+        </div>
+        <button id = "login" type="submit">Login</button>
+    </form>
+</div>
+</div>
+</body>
+</html>
